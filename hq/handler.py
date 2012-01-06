@@ -57,6 +57,8 @@ class RequestHandler(webapp.RequestHandler):
   BASIC_AUTH_USER = 'nugget'
   BASIC_AUTH_PASSWORD = 'hotdog'
 
+  REALM = 'mechadubzilla'
+
   def initialize(self, *args, **kwds):
     super(RequestHandler, self).initialize(*args, **kwds)
 
@@ -87,11 +89,11 @@ class RequestHandler(webapp.RequestHandler):
           return True
         else:
           self.error(401)
-          self.response.headers['WWW-Authenticate'] = 'Basic realm="CIC"'
+          self.response.headers['WWW-Authenticate'] = 'Basic realm="%s"' % (self.REALM,)
           return False
     else:
       self.error(401)
-      self.response.headers['WWW-Authenticate'] = 'Basic realm="CIC"'
+      self.response.headers['WWW-Authenticate'] = 'Basic realm="%s"' % (self.REALM,)
       return False
 
   def render_template(self, template_name, params, **kwds):
