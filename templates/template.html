@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>{{ instance_name|escape }} CIC: {% block title %}some page{% endblock %}</title>
+    <title>{{ instance_name|escape }}: {% block title %}some page{% endblock %}</title>
     <script type="text/javascript" src="/static/jquery-1.3.min.js"></script>
     <script type="text/javascript">
        $(document).ready(function() {
@@ -32,12 +32,12 @@
   </head>
   <body {% block bodyattrs %}{% endblock bodyattrs %}>
     <div id="current-user-info">
-      Battlestar Electronica Combat Information Center.
+      {{ instance_name|escape }}:
       {{ unsolved_puzzle_count }} puzzle{{ unsolved_puzzle_count|pluralize }}
-      in search of a solution. Called Earth.
+      wubwubWUBWUBwubWUBwub.
       You are: <span class="username">{{ current_user|escape }}</span>.
       {% ifequal current_user "nobody" %}
-        <span class="blatant">Please log in: </span>
+        <span class="blatant">Please WUB in: </span>
       {% else %}
         <a href="#" id="edit-username-selector">[change]</a>
       {% endifequal %}

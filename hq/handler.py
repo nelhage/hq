@@ -10,7 +10,7 @@ from google.appengine.ext import webapp
 from hq import my_template
 from hq import model
 
-INSTANCE_NAME = 'Battlestar Electronica'
+INSTANCE_NAME = 'Mechadubzilla'
 
 port = os.environ['SERVER_PORT']
 if port and port != '80':
