@@ -54,8 +54,8 @@ class RequestHandler(webapp.RequestHandler):
   COOKIE_NAME = 'hq_username'
   NOBODY = 'nobody'
 
-  BASIC_AUTH_USER = 'nugget'
-  BASIC_AUTH_PASSWORD = 'hotdog'
+  BASIC_AUTH_USER = 'wubstep'
+  BASIC_AUTH_PASSWORD = 'dubzilla'
 
   REALM = 'mechadubzilla'
 
