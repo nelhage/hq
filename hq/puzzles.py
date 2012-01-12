@@ -26,7 +26,7 @@ def LoadConsumerSecret():
 
 
 GDATA_SETTINGS = {
-  'CONSUMER_KEY': 'cic.battlestarelectronica.org',
+  'CONSUMER_KEY': 'hq.mechadubzilla.com',
   'CONSUMER_SECRET': LoadConsumerSecret(),
   'REQUEST_TOKEN': 'RequestToken',
   'ACCESS_TOKEN':  'AccessToken',
