@@ -400,7 +400,7 @@ class UserChangeHandler(handler.RequestHandler):
 
 class TopPageHandler(handler.RequestHandler):
   def get(self):
-    self.redirect(PuzzleListHandler.get_url('showmeta=status'))
+    self.redirect(PuzzleListHandler.get_url())
 
 
 class ImageUploadHandler(handler.RequestHandler):
