@@ -2,6 +2,7 @@
 
 import datetime
 import re
+import urlparse
 
 from google.appengine.api import datastore
 from google.appengine.api import memcache
@@ -120,6 +121,8 @@ class PuzzleMetadata(db.Model):
 
 
 class Puzzle(db.Expando):
+  PUZZLE_BASE_URL = 'http://18.85.38.78/'
+
   # TODO(glasser): Maximum length is 500 for StringProperty (unindexed
   # TextProperty is unlimited); is this OK?
   # TODO(glasser): Test that unicode titles work properly.
@@ -225,6 +228,11 @@ class Puzzle(db.Expando):
         value = None
       metadata.append((metadatum.key().name(), value))
     return metadata
+
+  def url(self):
+    if not hasattr(self, 'metadata_url'):
+      return None
+    return urlparse.urljoin(self.PUZZLE_BASE_URL, self.metadata_url)
 
   def tags_as_css_classes(self):
     def as_css_class(tag):

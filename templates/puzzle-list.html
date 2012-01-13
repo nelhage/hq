@@ -32,6 +32,9 @@
       <tr class="{{ puzzle.tags_as_css_classes }} {% cycle puzzle_display_0,puzzle_display_1 %}"> 
         <td class="puzzle_name">
           <a href="{% url PuzzleHandler puzzle.key.id %}">{{ puzzle.title|escape }}</a>
+          {% if puzzle.url %}
+          ⋅ <a href="{{puzzle.url}}">[hunt site]</a>
+          {% endif %}
         </td>
         {% for family__option in puzzle.ordered_families %}
           <td class="tag_{{ family__option.0.key.name }}_{{ family__option.1}}">

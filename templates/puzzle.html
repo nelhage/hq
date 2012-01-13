@@ -5,7 +5,11 @@
 {% block bodyattrs %} class="puzzle {{ puzzle.tags_as_css_classes }}" {% endblock bodyattrs %}
 
 {% block content %}
-<h3>Puzzle: {{ puzzle.title|escape }}</h3>
+<h3>Puzzle:
+{% if puzzle.url %} <a href="{{ puzzle.url }}"> {% endif %}
+{{ puzzle.title|escape }}
+{% if puzzle.url %}</a>{% endif %}
+</h3>
 
 <div id="tags_and_meta">
   <div id="tag-list">
