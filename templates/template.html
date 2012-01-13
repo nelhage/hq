@@ -32,7 +32,7 @@
   </head>
   <body {% block bodyattrs %}{% endblock bodyattrs %}>
     <div id="current-user-info">
-      {{ instance_name|escape }}:
+      <a href="{% url TopPageHandler %}">{{ instance_name|escape }}</a>:
       {{ unsolved_puzzle_count }} puzzle{{ unsolved_puzzle_count|pluralize }}
       wubwubWUBWUBwubWUBwub.
       You are: <span class="username">{{ current_user|escape }}</span>.
