@@ -58,6 +58,7 @@
     <div id="header-links">
       {% for link in header_links %}
         <a href="{{ link.href|escape }}">{{ link.title|escape }}</a>
+        <span class='link-sep'>⋅</span>
       {% endfor %}
       <a href="#" id="edit-admin-links">[Admin]</a>
       <span class="admin-links">
